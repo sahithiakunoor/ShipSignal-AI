@@ -2,7 +2,7 @@
 
 A historical e-commerce intelligence portfolio project. This delivery implements **trusted-data foundations only**: CSV discovery and preservation, quality profiles, transactional PostgreSQL ingestion, and validation.
 
-**Status: Olist data was not available locally. No actual Olist counts, schema findings, quality results, business metrics, or model scores are asserted.** The pipeline has been tested with explicitly synthetic software fixtures. Download the real files using [setup instructions](docs/setup.md), then run inspection before reviewing or accepting provisional contracts.
+**Milestone 1: complete with one documented exception for the owner’s local Olist snapshot.** The owner reported successful PostgreSQL ingestion and **56/57 validation checks passed**; the remaining check concerns 13 products in two categories absent from the supplied translation lookup. The strict validation result remains failed (exit status 1). See [run status and evidence provenance](docs/milestone_1_status.md), [observed dictionary](docs/observed_source_dictionary.md), and [exception DQ-001](docs/data_quality_exceptions.md). These local findings were supplied by the owner; the cloud environment has not independently rerun their dataset. No delivery KPI or model score is claimed.
 
 ## Quick start
 
@@ -13,7 +13,7 @@ python -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements-dev.lock.txt
 python -m pip install --no-deps -e .
-cp .env.example .env
+python scripts/init_local_env.py
 set -a
 source .env
 set +a
@@ -45,6 +45,9 @@ pytest -q
 Without `TEST_DATABASE_URL`, integration tests explicitly skip. Test fixtures are not Olist records and must never support portfolio business claims.
 
 ## Read next
+
+- [Observed source dictionary](docs/observed_source_dictionary.md)
+- [Known data-quality exception](docs/data_quality_exceptions.md)
 
 - [Setup and operational commands](docs/setup.md)
 - [Data model and grain](docs/data_model.md)
