@@ -7,7 +7,12 @@ name = "shipsignal-ai"
 version = "0.1.0"
 description = "Reproducible historical Olist ingestion and data validation"
 requires-python = ">=3.11"
-dependencies = ["psycopg[binary]>=3.2,<4"]
+dependencies = [
+  "psycopg[binary]>=3.2,<4", "fastapi>=0.115,<1", "uvicorn>=0.32,<1",
+  "httpx>=0.28,<1", "python-dotenv>=1,<2", "pandas>=2.2,<3", "scikit-learn>=1.6,<2",
+  "xgboost-cpu>=3.1,<4; platform_system == 'Linux' and platform_machine == 'x86_64'",
+  "xgboost>=2.1,<4; platform_system != 'Linux' or platform_machine != 'x86_64'", "joblib>=1.4,<2", "filelock>=3,<5", "chromadb>=1,<2", "openai>=1.60,<3", "huggingface-hub>=0.34,<1", "transformers>=4.45,<5", "onnxruntime>=1.20,<2"
+]
 
 [project.optional-dependencies]
 dev = ["pytest>=8,<10", "ruff>=0.11,<1"]
@@ -24,3 +29,6 @@ markers = ["integration: requires TEST_DATABASE_URL pointing at disposable Postg
 
 [tool.ruff]
 line-length = 100
+
+[tool.setuptools.package-data]
+shipsignal_data = ["*.json"]

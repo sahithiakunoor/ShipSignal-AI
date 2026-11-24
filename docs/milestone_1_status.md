@@ -1,10 +1,10 @@
 # Milestone 1 review
 
-**Status: complete with one documented data-quality exception for the owner's reviewed local snapshot. Stop for review before milestone 2.**
+**Status: complete with one documented data-quality exception for the owner's reviewed local snapshot. Historical milestone closeout; subsequent implementation is tracked in PROGRESS.md.**
 
 ## Evidence and scope
 
-The project owner downloaded the real Olist files, ran inspection locally, loaded PostgreSQL successfully and supplied the generated dictionary, terminal counts and sole failed-check details in this conversation. The loaded raw schema is `raw_dbfbd3a2636389441845`. The cloud environment does not have those CSVs or direct access to the owner's Mac database; it has not independently rerun that real-data validation. File checksums, full snapshot ID, time ranges, exact monetary totals and run timestamps remain in the owner's local reports and are not fabricated here.
+The project owner downloaded the real Olist files, ran inspection locally, loaded PostgreSQL successfully and supplied the generated dictionary, terminal counts and sole failed-check details in this conversation. The loaded raw schema is `raw_dbfbd3a2636389441845`. The original closeout relied on owner-supplied evidence. The current environment subsequently downloaded the official archive and independently reproduced its inventory, load and 56/57 validation result. It does not access the owner’s Mac database. File checksums, full snapshot ID, time ranges, exact monetary totals and run timestamps remain in the owner's local reports and are not fabricated here.
 
 | Local command | Owner-reported outcome |
 |---|---|
@@ -42,7 +42,7 @@ Source: [owner-supplied observed dictionary](observed_source_dictionary.md). The
 
 ## Software verification, distinct from real-data validation
 
-The original stored [JUnit evidence](evidence/pytest.xml) contains 16 passing synthetic software tests. Three configuration regression tests were subsequently added; the credential-remediation run reported **19 passing tests**, including four PostgreSQL integration tests. Tests cover parsing, profiling, relationship defects, CLI behavior, rollback, idempotency, content preservation, monetary conservation, archive mutation, database edits and local configuration. The stored original XML is not represented as a 19-test report. Current documentation review checks are recorded separately in the GitHub change summary.
+The original stored [JUnit evidence](evidence/pytest.xml) contains 16 passing synthetic software tests. Three configuration regression tests were subsequently added; the credential-remediation run reported **19 passing tests**, including four PostgreSQL integration tests. Tests cover parsing, profiling, relationship defects, CLI behavior, rollback, idempotency, content preservation, monetary conservation, archive mutation, database edits and local configuration. The stored original XML is not represented as a 19-test report. The subsequent full application verification is recorded in PROGRESS.md; its final software suite has 36 passing tests. These implementation changes are local only pending explicit approval to publish.
 
 Synthetic fixtures test behavior; they do not establish actual Olist findings. The owner's 56/57 data checks are a different validation run and must not be confused with 19 software tests.
 
@@ -50,7 +50,7 @@ Synthetic fixtures test behavior; they do not establish actual Olist findings. T
 
 The supplied evidence supports faithful raw ingestion, tested order-level join conservation and the documented translation exception. It does not establish causal drivers, delivery KPIs, model scores, full event-lifecycle consistency, allowed domains, geographic plausibility, or future feature availability. Raw text types preserve evidence; typed core transformations remain deferred. Nonunique review IDs and ZIP prefixes are preserved, not deduplicated by assumption.
 
-No dashboard, ML, RAG, LLM, simulated guidance or business API has been implemented. The owner must approve milestone 2 separately.
+This document describes the scope of milestone 1 at its closeout. The owner subsequently authorized sequential application implementation; current dashboard, ML, retrieval, API and live-provider status are documented in PROGRESS.md and README.md.
 
 ## Learn and reproduce
 

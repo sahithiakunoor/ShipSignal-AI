@@ -1,6 +1,6 @@
 # Concise semantic dictionary
 
-The owner supplied the actual generated dictionary for the reviewed local snapshot. See [the complete observed inventory](observed_source_dictionary.md) for exact headers, records, blanks and distinct counts. This document explains field meanings and remaining semantic assumptions. The cloud environment has not independently inspected the underlying CSVs. Structural observations do not by themselves establish business semantics or availability at prediction time.
+The owner supplied the actual generated dictionary for the reviewed local snapshot. See [the complete observed inventory](observed_source_dictionary.md) for exact headers, records, blanks and distinct counts. This document explains field meanings and remaining semantic assumptions. The official source CSVs and documented inventory were subsequently independently inspected in this implementation environment; see PROGRESS.md for the run. Structural observations do not by themselves establish business semantics or availability at prediction time.
 
 | Expected field(s) | Proposed interpretation | Raw handling / unresolved assumption |
 |---|---|---|

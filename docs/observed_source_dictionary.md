@@ -1,6 +1,6 @@
 # Observed source dictionary — local Olist snapshot
 
-**Provenance:** Transcribed from the generated `reports/inspection.dictionary.md` supplied by the project owner in this conversation, alongside the successful ingestion into `raw_dbfbd3a2636389441845` and its validation output. The cloud environment has not independently inspected these source CSVs or the owner’s PostgreSQL database. Full file checksums and run timestamps remain in the local inspection manifest; the schema suffix is not the full snapshot ID.
+**Provenance:** Transcribed from the generated `reports/inspection.dictionary.md` supplied by the project owner in this conversation, alongside the successful ingestion into `raw_dbfbd3a2636389441845` and its validation output. The inventory was subsequently independently reproduced in this implementation environment from the official Kaggle archive, with the same nine table counts and 56/57 validation result; the owner’s Mac database remains separate. Full file checksums and run timestamps remain in the local inspection manifest; the schema suffix is not the full snapshot ID.
 
 All source fields are stored as text in raw PostgreSQL tables. Missing means empty or whitespace-only, counted separately below. Distinct counts include empty strings. No row-level customer data, passwords, connection strings, local filesystem paths, or source CSVs are included.
 

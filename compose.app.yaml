@@ -1,0 +1,18 @@
+# Optional application service layered on the existing PostgreSQL compose.yaml.
+# Prebuild analytics/model/index locally first; mount only generated local artifacts.
+services:
+  app:
+    build: .
+    user: "${LOCAL_UID:-1000}:${LOCAL_GID:-1000}"
+    env_file: .env
+    environment:
+      DATABASE_URL: postgresql://${POSTGRES_USER:-shipsignal}:${POSTGRES_PASSWORD:?Set a private password}@postgres:5432/${POSTGRES_DB:-shipsignal}
+      ARTIFACTS_DIR: /app/artifacts
+      FRONTEND_DIST: /app/frontend/dist
+    ports:
+      - "127.0.0.1:8787:8787"
+    volumes:
+      - ./artifacts:/app/artifacts
+    depends_on:
+      postgres:
+        condition: service_healthy

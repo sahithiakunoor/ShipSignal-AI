@@ -60,3 +60,18 @@ def test_database_tampering_is_detected(database_url, manifest):
     assert "items.all_field_content" in failed
     assert "items.price.sum" in failed
     assert "order_grain_join.count_and_monetary_conservation" in failed
+
+
+def test_nonnumeric_database_edit_is_a_finding_not_a_cast_crash(database_url, manifest):
+    ingest(database_url, manifest)
+    with psycopg.connect(database_url) as conn:
+        conn.execute(
+            sql.SQL("UPDATE {} SET price='invalid' WHERE __source_row=1").format(
+                sql.Identifier(schema_name(manifest), "items")
+            )
+        )
+    checks = validate_database(database_url, manifest)
+    failed = {c["check"] for c in checks if not c["passed"]}
+    assert "items.all_field_content" in failed
+    assert "items.price.sum" in failed
+    assert "order_grain_join.count_and_monetary_conservation" in failed

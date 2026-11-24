@@ -33,6 +33,6 @@ Rerun the commands in README after code changes. A passing synthetic test suite 
 
 ## Reviewed local run and exception disposition
 
-The owner reported 34/35 source checks and 56/57 full checks passed. The sole failure is [DQ-001](data_quality_exceptions.md); all 22 database reconciliation checks passed. The validation engine still reports `passed=false` and exits 1. Documentation records the exception without changing the check or silently accepting future deviations. The counts and observed dictionary are user-supplied evidence; full local reports have not been transferred to the cloud.
+The owner reported 34/35 source checks and 56/57 full checks passed. The sole failure is [DQ-001](data_quality_exceptions.md); all 22 database reconciliation checks passed. The validation engine still reports `passed=false` and exits 1. Documentation records the exception without changing the check or silently accepting future deviations. The initial record used owner-supplied evidence. The current implementation independently downloaded the official archive and reproduced the same source inventory and validation result; the owner’s Mac reports remain separate.
 
 A passing timestamp-parse check permits blanks and does not prove lifecycle consistency. Distinct counts include empty values. Review and geolocation candidate multiplicity, exact-row duplicates and chronology profiles are not all blocking gates. Aggregate sum conservation is useful alongside full field-content verification; it is not a per-order equality assertion between payments and items.

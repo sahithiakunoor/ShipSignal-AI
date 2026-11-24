@@ -4,7 +4,7 @@
 
 **Disposition:** Documented exception for the reviewed local snapshot. The measured check remains failed. No automatic waiver or validation-code change has been made.
 
-**Evidence provenance:** The project owner supplied the generated source dictionary, ingestion output and failed-check JSON in this conversation. This records that evidence; it is not an independent cloud rerun. Loaded schema: `raw_dbfbd3a2636389441845`. Full snapshot identity, file checksums and timestamps remain in the owner's local manifest.
+**Evidence provenance:** The project owner supplied the generated source dictionary, ingestion output and failed-check JSON in this conversation. The original entry records owner-supplied evidence; the current implementation subsequently reproduced the same failure independently from the official archive. Loaded schema: `raw_dbfbd3a2636389441845`. Full snapshot identity, file checksums and timestamps remain in the owner's local manifest.
 
 | Check field | Observed value |
 |---|---:|

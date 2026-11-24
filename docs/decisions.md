@@ -34,7 +34,7 @@ Source monetary values are checked with exact Decimal and PostgreSQL numeric. Cu
 
 ## Scope boundary
 
-No typed core schema, dashboard, API, model, embeddings, retrieval, LLM integration, or simulated guidance is created. The owner has supplied real local inspection and validation evidence. Milestone 1 is reviewed as complete with documented exception DQ-001, while the CLI preserves its original failed overall result. This does not authorize milestone 2. The cloud has not independently reproduced the owner’s raw-data run.
+The original milestone 1 boundary excluded downstream application components; subsequently authorized work is recorded in PROGRESS.md and docs/architecture.md. The owner has supplied real local inspection and validation evidence. Milestone 1 is reviewed as complete with documented exception DQ-001, while the CLI preserves its original failed overall result. The owner subsequently authorized milestones 2–5, and this environment reproduced the source inventory and raw-data validation independently.
 
 ## Reviewed translation exception
 

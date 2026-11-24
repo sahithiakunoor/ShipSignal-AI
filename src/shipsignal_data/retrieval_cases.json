@@ -1,0 +1,158 @@
+[
+  {
+    "id": "late-pt",
+    "question": "A entrega está atrasada e sem previsão de quando vai chegar",
+    "language": "pt",
+    "kind": "review",
+    "relevant_ids": [
+      "review:2232:0"
+    ],
+    "label_basis": "Developer inspected the actual source review; paraphrase/translation diagnostic with incomplete relevance labels."
+  },
+  {
+    "id": "late-en",
+    "question": "My delivery is late and there is no expected arrival date.",
+    "language": "en",
+    "kind": "review",
+    "relevant_ids": [
+      "review:2232:0"
+    ],
+    "label_basis": "Developer inspected the actual source review; paraphrase/translation diagnostic with incomplete relevance labels."
+  },
+  {
+    "id": "chair-pt",
+    "question": "A cadeira chegou no prazo, mas veio quebrada na parte inferior.",
+    "language": "pt",
+    "kind": "review",
+    "relevant_ids": [
+      "review:794:0"
+    ],
+    "label_basis": "Developer inspected the actual source review; paraphrase/translation diagnostic with incomplete relevance labels."
+  },
+  {
+    "id": "chair-en",
+    "question": "The chair arrived on time but was broken underneath.",
+    "language": "en",
+    "kind": "review",
+    "relevant_ids": [
+      "review:794:0"
+    ],
+    "label_basis": "Developer inspected the actual source review; paraphrase/translation diagnostic with incomplete relevance labels."
+  },
+  {
+    "id": "wrong-pt",
+    "question": "Não veio um produto e o outro veio errado.",
+    "language": "pt",
+    "kind": "review",
+    "relevant_ids": [
+      "review:1044:0"
+    ],
+    "label_basis": "Developer inspected the actual source review; paraphrase/translation diagnostic with incomplete relevance labels."
+  },
+  {
+    "id": "wrong-en",
+    "question": "One product did not arrive and the other was the wrong item.",
+    "language": "en",
+    "kind": "review",
+    "relevant_ids": [
+      "review:1044:0"
+    ],
+    "label_basis": "Developer inspected the actual source review; paraphrase/translation diagnostic with incomplete relevance labels."
+  },
+  {
+    "id": "remote-pt",
+    "question": "Faltou o controle remoto para o ar condicionado Consul.",
+    "language": "pt",
+    "kind": "review",
+    "relevant_ids": [
+      "review:52:0"
+    ],
+    "label_basis": "Developer inspected the actual source review; paraphrase/translation diagnostic with incomplete relevance labels."
+  },
+  {
+    "id": "remote-en",
+    "question": "The Consul air conditioner remote control was missing.",
+    "language": "en",
+    "kind": "review",
+    "relevant_ids": [
+      "review:52:0"
+    ],
+    "label_basis": "Developer inspected the actual source review; paraphrase/translation diagnostic with incomplete relevance labels."
+  },
+  {
+    "id": "early-pt",
+    "question": "Vendedor confiável, produto ok e entrega antes do prazo.",
+    "language": "pt",
+    "kind": "review",
+    "relevant_ids": [
+      "review:16:0"
+    ],
+    "label_basis": "Developer inspected the actual source review; paraphrase/translation diagnostic with incomplete relevance labels."
+  },
+  {
+    "id": "early-en",
+    "question": "Reliable seller, good product and delivery before the deadline.",
+    "language": "en",
+    "kind": "review",
+    "relevant_ids": [
+      "review:16:0"
+    ],
+    "label_basis": "Developer inspected the actual source review; paraphrase/translation diagnostic with incomplete relevance labels."
+  },
+  {
+    "id": "guidance-damage-en",
+    "question": "What should support do when an item is broken?",
+    "language": "en",
+    "kind": "guidance",
+    "relevant_ids": [
+      "sim-damage-v1"
+    ],
+    "label_basis": "Authored simulated document with explicit matching action."
+  },
+  {
+    "id": "guidance-missing-pt",
+    "question": "Como investigar um produto faltando no pedido?",
+    "language": "pt",
+    "kind": "guidance",
+    "relevant_ids": [
+      "sim-missing-item-v1"
+    ],
+    "label_basis": "Authored simulated document with explicit matching action."
+  },
+  {
+    "id": "guidance-metrics-en",
+    "question": "How should I use numerical results and customer reviews responsibly?",
+    "language": "en",
+    "kind": "guidance",
+    "relevant_ids": [
+      "sim-analysis-v1"
+    ],
+    "label_basis": "Authored simulated document with explicit matching action."
+  },
+  {
+    "id": "guidance-communication-pt",
+    "question": "Como responder ao cliente sem prometer uma data ou reembolso?",
+    "language": "pt",
+    "kind": "guidance",
+    "relevant_ids": [
+      "sim-communication-v1"
+    ],
+    "label_basis": "Authored simulated document with explicit matching action."
+  },
+  {
+    "id": "unsupported-en",
+    "question": "What was the weather on Mars yesterday?",
+    "language": "en",
+    "kind": "review",
+    "relevant_ids": [],
+    "label_basis": "Outside dataset scope."
+  },
+  {
+    "id": "unsupported-pt",
+    "question": "Qual é a composição química de uma estrela de nêutrons?",
+    "language": "pt",
+    "kind": "review",
+    "relevant_ids": [],
+    "label_basis": "Outside dataset scope."
+  }
+]

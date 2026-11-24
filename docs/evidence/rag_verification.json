@@ -1,0 +1,37 @@
+{
+  "passed": true,
+  "assistant_workflows": [
+    {
+      "mode": "analytics",
+      "generation_status": "not_configured",
+      "citations": 6
+    },
+    {
+      "mode": "risk",
+      "generation_status": "not_configured",
+      "citations": 2
+    },
+    {
+      "mode": "reviews",
+      "generation_status": "not_configured",
+      "citations": 5
+    },
+    {
+      "mode": "reviews",
+      "generation_status": "not_configured",
+      "citations": 5
+    },
+    {
+      "mode": "guidance",
+      "generation_status": "not_configured",
+      "citations": 1
+    }
+  ],
+  "verified_source_records": 17,
+  "citation_source_integrity": 1.0,
+  "sql_answer_agreement": true,
+  "review_state_filter": true,
+  "unsupported_scope_abstention": true,
+  "live_llm_generation_evaluated": false,
+  "note": "Source-integrity verification is not a semantic LLM answer-quality score."
+}

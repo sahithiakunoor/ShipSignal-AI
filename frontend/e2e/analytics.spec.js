@@ -1,0 +1,31 @@
+import {test,expect} from '@playwright/test';
+test('real-data dashboard agrees with API and filters',async({page,request})=>{
+ const actual=await (await request.get('/api/analytics')).json();
+ const errors=[];page.on('pageerror',e=>errors.push(e.message));
+ await page.goto('/');
+ await expect(page.getByTestId('Total orders')).toHaveText(actual.kpis.orders.toLocaleString('en-US'));
+ await expect(page.locator('.js-plotly-plot')).toHaveCount(2);
+ await page.getByLabel('Customer state',{exact:true}).selectOption('SP');
+ await page.getByRole('button',{name:'Apply filters'}).click();
+ const filtered=await (await request.get('/api/analytics?state=SP')).json();
+ await expect(page.getByTestId('Total orders')).toHaveText(filtered.kpis.orders.toLocaleString('en-US'));
+ await expect(page.getByTestId('Late delivery rate')).toHaveText((filtered.kpis.late_delivery_rate*100).toFixed(1)+'%');
+ await page.getByRole('button',{name:'Reset',exact:true}).click();
+ await expect(page.getByTestId('Total orders')).toHaveText(actual.kpis.orders.toLocaleString('en-US'));
+ await page.evaluate(()=>window.scrollTo(0,0));
+ await page.screenshot({path:'../docs/screenshots/analytics-desktop.png',fullPage:true});
+ await page.setViewportSize({width:390,height:844});
+ await expect(page.getByRole('heading',{name:'A clearer view of every delivery.'})).toBeVisible();
+ await page.evaluate(()=>window.scrollTo(0,0));
+ await page.screenshot({path:'../docs/screenshots/analytics-mobile.png',fullPage:true});
+ expect(errors).toEqual([]);
+});
+test('empty historical cohorts preserve undefined rates instead of inventing zero',async({page})=>{
+ await page.goto('/');
+ await page.getByLabel('From purchase date',{exact:true}).fill('2020-01-01');
+ await page.getByLabel('To purchase date',{exact:true}).fill('2020-01-31');
+ await page.getByRole('button',{name:'Apply filters',exact:true}).click();
+ await expect(page.getByTestId('Total orders')).toHaveText('0');
+ await expect(page.getByTestId('Late delivery rate')).toHaveText('—');
+ await expect(page.getByText('No orders match this cohort. Widen the date or state filters.')).toBeVisible();
+});

@@ -1,6 +1,6 @@
 # Data model and grain
 
-**Reviewed against the owner-supplied local dictionary and validation output.** All configured relationships passed except [DQ-001](data_quality_exceptions.md). Evidence applies to schema `raw_dbfbd3a2636389441845`; it has not been independently reproduced in the cloud environment. Business-key checks remain assertions in code, not raw database constraints.
+**Reviewed against the owner-supplied local dictionary and validation output.** All configured relationships passed except [DQ-001](data_quality_exceptions.md). Evidence applies to schema `raw_dbfbd3a2636389441845`; the same source inventory and reconciliation result were subsequently reproduced from the official archive in this environment. Business-key checks remain assertions in code, not raw database constraints.
 
 The milestone implements source-shaped raw tables and ingestion metadata. Typed `core` tables and business analytics are deferred until observed defects and schema are reviewed. This avoids encoding unverified primary keys or dropping irregular rows.
 

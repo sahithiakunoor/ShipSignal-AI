@@ -111,20 +111,21 @@ def validate_database(dsn, manifest):
                 )
                 for row in cursor:
                     canonical_update(digest, list(row))
+            content_matches = digest.hexdigest() == info["content_sha256"]
             checks.append(
                 {
                     "check": f"{table}.all_field_content",
-                    "passed": digest.hexdigest() == info["content_sha256"],
+                    "passed": content_matches,
                 }
             )
             for column in MONEY.get(table, []):
                 profile = info["money"].get(column)
-                if profile is None or profile["invalid"]:
+                if profile is None or profile["invalid"] or not content_matches:
                     checks.append(
                         {
                             "check": f"{table}.{column}.sum",
                             "passed": False,
-                            "reason": "missing column or invalid numeric values",
+                            "reason": "missing/invalid numeric source or database content mismatch",
                         }
                     )
                     continue
@@ -157,7 +158,10 @@ def validate_database(dsn, manifest):
             for t in ("items", "payments")
             for p in manifest["tables"].get(t, {}).get("money", {}).values()
         )
-        if available and valid_money:
+        content_verified = all(
+            c["passed"] for c in checks if c["check"].endswith(".all_field_content")
+        )
+        if available and valid_money and content_verified:
             result = conn.execute(
                 sql.SQL("""
                 WITH i AS (

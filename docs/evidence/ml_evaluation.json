@@ -1,0 +1,235 @@
+{
+  "snapshot_id": "dbfbd3a2636389441845929bdfebcf282074943cd8b5db47d9fe5f3de9f87815",
+  "version": "approval_v1",
+  "features": [
+    "item_count",
+    "seller_count",
+    "category_count",
+    "item_value",
+    "freight_value",
+    "weight_g",
+    "length_cm",
+    "height_cm",
+    "width_cm",
+    "approval_wait_hours",
+    "purchase_month",
+    "purchase_weekday",
+    "purchase_hour",
+    "approval_month",
+    "approval_weekday",
+    "approval_hour",
+    "customer_state",
+    "seller_states",
+    "category"
+  ],
+  "boundaries": {
+    "validation_start": "2018-03-03 12:55:55",
+    "selection_start": "2018-04-16 00:13:18",
+    "test_start": "2018-05-26 19:38:22"
+  },
+  "selected_model": "xgboost",
+  "model_id": "b4c5c209b975d032",
+  "created_at": "2026-11-23T17:20:31.988549+00:00",
+  "cohort": "Observed delivered outcomes only; approval-time historical prediction.",
+  "feature_availability_document": "docs/feature_availability.md",
+  "split_audit": {
+    "boundaries": {
+      "validation_start": "2018-03-03 12:55:55",
+      "selection_start": "2018-04-16 00:13:18",
+      "test_start": "2018-05-26 19:38:22"
+    },
+    "periods": {
+      "train": {
+        "orders": 54178,
+        "purged_unmatured_labels": 3659,
+        "approval_start": "2016-09-15 12:16:38",
+        "approval_end": "2018-03-01 10:50:23",
+        "latest_label_observed": "2018-03-03 12:37:32",
+        "late_prevalence": 0.05983978736756617
+      },
+      "calibration": {
+        "orders": 6721,
+        "purged_unmatured_labels": 2918,
+        "approval_start": "2018-03-03 12:55:55",
+        "approval_end": "2018-04-13 13:35:34",
+        "latest_label_observed": "2018-04-15 21:04:20",
+        "late_prevalence": 0.10757327778604374
+      },
+      "selection": {
+        "orders": 7649,
+        "purged_unmatured_labels": 1991,
+        "approval_start": "2018-04-16 00:13:18",
+        "approval_end": "2018-05-25 02:54:51",
+        "latest_label_observed": "2018-05-26 18:18:22",
+        "late_prevalence": 0.0158190613152046
+      },
+      "test": {
+        "orders": 19279,
+        "purged_unmatured_labels": 0,
+        "approval_start": "2018-05-26 19:38:22",
+        "approval_end": "2018-08-29 15:10:26",
+        "latest_label_observed": "2018-10-17 13:22:46",
+        "late_prevalence": 0.05280356864982624
+      }
+    }
+  },
+  "selection_rule": "Highest average precision on later validation; threshold maximizes validation F1.",
+  "candidates": {
+    "logistic_regression": {
+      "validation": {
+        "orders": 7649,
+        "prevalence": 0.0158190613152046,
+        "threshold": 0.16499999999999998,
+        "precision": 0.0310192023633678,
+        "recall": 0.17355371900826447,
+        "f1": 0.05263157894736842,
+        "roc_auc": 0.6227900685924066,
+        "pr_auc_average_precision": 0.025135841372064257,
+        "brier_score": 0.026666489814085148,
+        "precision_top_10pct": 0.030065359477124184,
+        "recall_top_10pct": 0.19008264462809918,
+        "calibration": [
+          {
+            "mean_probability": 0.08685816257344718,
+            "observed_rate": 0.009499136442141624,
+            "orders": 2316
+          },
+          {
+            "mean_probability": 0.12962187011501905,
+            "observed_rate": 0.017864003073376874,
+            "orders": 5206
+          },
+          {
+            "mean_probability": 0.22354639409127303,
+            "observed_rate": 0.04838709677419355,
+            "orders": 124
+          },
+          {
+            "mean_probability": 0.3331051150582405,
+            "observed_rate": 0.0,
+            "orders": 3
+          }
+        ]
+      },
+      "test": {
+        "orders": 19279,
+        "prevalence": 0.05280356864982624,
+        "threshold": 0.16499999999999998,
+        "precision": 0.0533658876874782,
+        "recall": 0.15029469548133595,
+        "f1": 0.07876447876447877,
+        "roc_auc": 0.5772620943062119,
+        "pr_auc_average_precision": 0.06273193496694666,
+        "brier_score": 0.05615263326418727,
+        "precision_top_10pct": 0.05549792531120332,
+        "recall_top_10pct": 0.10510805500982318,
+        "calibration": [
+          {
+            "mean_probability": 0.0871931506653122,
+            "observed_rate": 0.020141843971631206,
+            "orders": 3525
+          },
+          {
+            "mean_probability": 0.133440070130455,
+            "observed_rate": 0.05983075499140553,
+            "orders": 15126
+          },
+          {
+            "mean_probability": 0.2222600009391668,
+            "observed_rate": 0.06446280991735537,
+            "orders": 605
+          },
+          {
+            "mean_probability": 0.3261466565903058,
+            "observed_rate": 0.09090909090909091,
+            "orders": 22
+          },
+          {
+            "mean_probability": 0.4208841430840721,
+            "observed_rate": 1.0,
+            "orders": 1
+          }
+        ]
+      }
+    },
+    "xgboost": {
+      "validation": {
+        "orders": 7649,
+        "prevalence": 0.0158190613152046,
+        "threshold": 0.135,
+        "precision": 0.06077348066298342,
+        "recall": 0.18181818181818182,
+        "f1": 0.09109730848861283,
+        "roc_auc": 0.6928678388561491,
+        "pr_auc_average_precision": 0.03759927344568942,
+        "brier_score": 0.023761024583334543,
+        "precision_top_10pct": 0.040522875816993466,
+        "recall_top_10pct": 0.256198347107438,
+        "calibration": [
+          {
+            "mean_probability": 0.09013095652572883,
+            "observed_rate": 0.005802707930367505,
+            "orders": 2585
+          },
+          {
+            "mean_probability": 0.11543642142478606,
+            "observed_rate": 0.02093206951026856,
+            "orders": 5064
+          }
+        ]
+      },
+      "test": {
+        "orders": 19279,
+        "prevalence": 0.05280356864982624,
+        "threshold": 0.135,
+        "precision": 0.061946902654867256,
+        "recall": 0.0068762278978389,
+        "f1": 0.01237842617152962,
+        "roc_auc": 0.5665577783996276,
+        "pr_auc_average_precision": 0.060734169033543436,
+        "brier_score": 0.0521318466028151,
+        "precision_top_10pct": 0.056016597510373446,
+        "recall_top_10pct": 0.10609037328094302,
+        "calibration": [
+          {
+            "mean_probability": 0.08921165149742197,
+            "observed_rate": 0.043219076005961254,
+            "orders": 9394
+          },
+          {
+            "mean_probability": 0.1107800312223432,
+            "observed_rate": 0.061911987860394535,
+            "orders": 9885
+          }
+        ]
+      }
+    }
+  },
+  "prevalence_baseline": {
+    "orders": 19279,
+    "prevalence": 0.05280356864982624,
+    "threshold": 0.5,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "roc_auc": 0.5,
+    "pr_auc_average_precision": 0.05280356864982624,
+    "brier_score": 0.050064860161513194,
+    "precision_top_10pct": 0.00466804979253112,
+    "recall_top_10pct": 0.008840864440078585,
+    "calibration": [
+      {
+        "mean_probability": 0.059839787367566184,
+        "observed_rate": 0.05280356864982624,
+        "orders": 19279
+      }
+    ]
+  },
+  "limitations": [
+    "Catalog/seller attributes treated as static; source is not event-versioned.",
+    "Delivery promise excluded as an input; actual outcome/promise used only for label/cohort.",
+    "Temporal shifts can impair performance. No causal interpretation.",
+    "No performance claim for canceled, undelivered or future live orders."
+  ],
+  "operational_readiness": "Experimental: weak held-out discrimination and low threshold recall. Not validated for operational decisions."
+}

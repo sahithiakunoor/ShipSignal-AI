@@ -1,0 +1,263 @@
+{
+  "snapshot_id": "dbfbd3a2636389441845929bdfebcf282074943cd8b5db47d9fe5f3de9f87815",
+  "model": {
+    "repo": "Xenova/paraphrase-multilingual-MiniLM-L12-v2",
+    "revision": "2c4055b12046f11709e9df2c122e59ffbdc2f900",
+    "file": "onnx/model_quantized.onnx",
+    "backend": "onnxruntime-cpu",
+    "max_tokens": 128,
+    "pooling": "masked_mean_l2",
+    "original_model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
+  },
+  "cases": [
+    {
+      "id": "late-pt",
+      "language": "pt",
+      "question": "A entrega est\u00e1 atrasada e sem previs\u00e3o de quando vai chegar",
+      "hit_at_5": true,
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved_ids": [
+        "review:2232:0",
+        "review:8569:0",
+        "review:18368:0",
+        "review:11319:0",
+        "review:86560:0"
+      ],
+      "relevant_ids": [
+        "review:2232:0"
+      ]
+    },
+    {
+      "id": "late-en",
+      "language": "en",
+      "question": "My delivery is late and there is no expected arrival date.",
+      "hit_at_5": true,
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved_ids": [
+        "review:2232:0",
+        "review:41383:0",
+        "review:11319:0",
+        "review:86560:0",
+        "review:87602:0"
+      ],
+      "relevant_ids": [
+        "review:2232:0"
+      ]
+    },
+    {
+      "id": "chair-pt",
+      "language": "pt",
+      "question": "A cadeira chegou no prazo, mas veio quebrada na parte inferior.",
+      "hit_at_5": true,
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 0.5,
+      "retrieved_ids": [
+        "review:6891:0",
+        "review:794:0",
+        "review:98900:0",
+        "review:33097:0",
+        "review:40554:0"
+      ],
+      "relevant_ids": [
+        "review:794:0"
+      ]
+    },
+    {
+      "id": "chair-en",
+      "language": "en",
+      "question": "The chair arrived on time but was broken underneath.",
+      "hit_at_5": true,
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 0.3333333333333333,
+      "retrieved_ids": [
+        "review:33097:0",
+        "review:6891:0",
+        "review:794:0",
+        "review:66652:0",
+        "review:63170:0"
+      ],
+      "relevant_ids": [
+        "review:794:0"
+      ]
+    },
+    {
+      "id": "wrong-pt",
+      "language": "pt",
+      "question": "N\u00e3o veio um produto e o outro veio errado.",
+      "hit_at_5": true,
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved_ids": [
+        "review:1044:0",
+        "review:25029:0",
+        "review:31461:0",
+        "review:83551:0",
+        "review:14227:0"
+      ],
+      "relevant_ids": [
+        "review:1044:0"
+      ]
+    },
+    {
+      "id": "wrong-en",
+      "language": "en",
+      "question": "One product did not arrive and the other was the wrong item.",
+      "hit_at_5": true,
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved_ids": [
+        "review:1044:0",
+        "review:63633:0",
+        "review:25029:0",
+        "review:12888:0",
+        "review:81807:0"
+      ],
+      "relevant_ids": [
+        "review:1044:0"
+      ]
+    },
+    {
+      "id": "remote-pt",
+      "language": "pt",
+      "question": "Faltou o controle remoto para o ar condicionado Consul.",
+      "hit_at_5": false,
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0,
+      "retrieved_ids": [],
+      "relevant_ids": [
+        "review:52:0"
+      ]
+    },
+    {
+      "id": "remote-en",
+      "language": "en",
+      "question": "The Consul air conditioner remote control was missing.",
+      "hit_at_5": false,
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0,
+      "retrieved_ids": [
+        "review:48057:0"
+      ],
+      "relevant_ids": [
+        "review:52:0"
+      ]
+    },
+    {
+      "id": "early-pt",
+      "language": "pt",
+      "question": "Vendedor confi\u00e1vel, produto ok e entrega antes do prazo.",
+      "hit_at_5": true,
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 0.5,
+      "retrieved_ids": [
+        "review:68018:0",
+        "review:16:0",
+        "review:77172:0",
+        "review:38018:0",
+        "review:19966:0"
+      ],
+      "relevant_ids": [
+        "review:16:0"
+      ]
+    },
+    {
+      "id": "early-en",
+      "language": "en",
+      "question": "Reliable seller, good product and delivery before the deadline.",
+      "hit_at_5": true,
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 0.5,
+      "retrieved_ids": [
+        "review:97422:0",
+        "review:16:0",
+        "review:72497:0",
+        "review:53142:0",
+        "review:11846:0"
+      ],
+      "relevant_ids": [
+        "review:16:0"
+      ]
+    },
+    {
+      "id": "guidance-damage-en",
+      "language": "en",
+      "question": "What should support do when an item is broken?",
+      "hit_at_5": true,
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved_ids": [
+        "sim-damage-v1"
+      ],
+      "relevant_ids": [
+        "sim-damage-v1"
+      ]
+    },
+    {
+      "id": "guidance-missing-pt",
+      "language": "pt",
+      "question": "Como investigar um produto faltando no pedido?",
+      "hit_at_5": true,
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved_ids": [
+        "sim-missing-item-v1"
+      ],
+      "relevant_ids": [
+        "sim-missing-item-v1"
+      ]
+    },
+    {
+      "id": "guidance-metrics-en",
+      "language": "en",
+      "question": "How should I use numerical results and customer reviews responsibly?",
+      "hit_at_5": true,
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved_ids": [
+        "sim-analysis-v1"
+      ],
+      "relevant_ids": [
+        "sim-analysis-v1"
+      ]
+    },
+    {
+      "id": "guidance-communication-pt",
+      "language": "pt",
+      "question": "Como responder ao cliente sem prometer uma data ou reembolso?",
+      "hit_at_5": true,
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved_ids": [
+        "sim-communication-v1"
+      ],
+      "relevant_ids": [
+        "sim-communication-v1"
+      ]
+    },
+    {
+      "id": "unsupported-en",
+      "language": "en",
+      "question": "What was the weather on Mars yesterday?",
+      "unsupported_retrieval_abstained": true,
+      "retrieved_ids": []
+    },
+    {
+      "id": "unsupported-pt",
+      "language": "pt",
+      "question": "Qual \u00e9 a composi\u00e7\u00e3o qu\u00edmica de uma estrela de n\u00eautrons?",
+      "unsupported_retrieval_abstained": true,
+      "retrieved_ids": []
+    }
+  ],
+  "supported_cases": 14,
+  "retrieval_pipeline": "multilingual cosine search; explicit topic fallback for simulated guidance only",
+  "hit_rate_at_5": 0.8571428571428571,
+  "mean_recall_at_5": 0.8571428571428571,
+  "mean_reciprocal_rank_at_5": 0.7023809523809524,
+  "unsupported_cases": 2,
+  "unsupported_retrieval_abstention_rate": 1.0,
+  "methodology": "Small developer-curated diagnostic set with actual record IDs. Incomplete relevance judgments; not a representative or independent benchmark.",
+  "live_llm_generation_evaluated": false
+}

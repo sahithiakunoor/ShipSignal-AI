@@ -1,0 +1,17 @@
+.git
+.env
+.env.*
+!.env.example
+.venv
+__pycache__
+.pytest_cache
+.ruff_cache
+work
+frontend/node_modules
+frontend/test-results
+frontend/playwright-report
+data/raw
+data/manifests
+reports
+artifacts
+*.joblib

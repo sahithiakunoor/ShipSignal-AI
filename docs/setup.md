@@ -1,4 +1,6 @@
-# Setup and first real-data run
+# Source-data setup reference
+
+For the current full-application commands, follow [README.md](../README.md). This page retains the detailed source-download, archive and password-rotation notes from milestone 1. On an existing setup preserve .env, raw files and pgdata; do not reinitialize them.
 
 ## Obtain the actual source
 
@@ -25,8 +27,7 @@ Run commands from the project root, in bash:
 ```bash
 python -m venv .venv
 source .venv/bin/activate
-python -m pip install -r requirements-dev.lock.txt
-python -m pip install --no-deps -e .
+python -m pip install -e '.[dev]'
 python scripts/init_local_env.py
 set -a
 source .env
